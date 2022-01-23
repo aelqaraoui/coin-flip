@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.df682a99.ico">
+  <link rel="apple-touch-icon" href="/favicon.df682a99.ico">
+  <title>Welcome to NEAR</title>
+  <link rel="stylesheet" href="/global.e50bbfba.css">
+<script src="/global.e50bbfba.js"></script></head>
+<body>
+  <main id="signed-out-flow" style="display: none">
+    <h1>Welcome to DEGEN Lizards' CASINO!</h1>
+    <p style="text-align: center; margin-top: 2.5em">
+      <button id="sign-in-button">Sign in</button>
+    </p>
+  </main>
+
+  <div id="signed-in-flow" style="display: none">
+    <button class="link" style="float: right" id="sign-out-button">
+      Sign out
+    </button>
+    <main>
+      <h1>Welcome to DEGEN Lizards' CASINO!</h1>
+      <div class="text">
+        <span data-behavior="account-id"></span>
+        <p id="balance"></p>
+        <p id="contract-balance"></p>
+
+        <p id="status"></p>
+
+        <form>
+          <button id="flip-btn" style="border-radius: 5px">DOUBLE OR NOTHING</button>  
+        </form>
+      </div>
+      
+    </main>
+  </div>
+
+  <aside data-behavior="notification" style="display: none">
+    <a target="_blank" href="https://explorer.testnet.near.org/accounts/"></a>
+    called method: 'setGreeting' in contract:
+    <a target="_blank" href="https://explorer.testnet.near.org/accounts/"></a>
+    <footer>
+      <div>✔ Succeeded</div>
+      <div>Just now</div>
+    </footer>
+  </aside>
+
+  <script src="/src.e31bb0bc.js"></script>
+</body>
+</html>
