@@ -17326,7 +17326,7 @@ __exportStar(require("./browser-connect"), exports);
 require("error-polyfill");
 
 },{"./key_stores/browser-index":"../node_modules/near-api-js/lib/key_stores/browser-index.js","./common-index":"../node_modules/near-api-js/lib/common-index.js","./browser-connect":"../node_modules/near-api-js/lib/browser-connect.js","error-polyfill":"../node_modules/error-polyfill/index.js"}],"config.js":[function(require,module,exports) {
-var CONTRACT_NAME = 'coin-flip.amineelqara.testnet';
+var CONTRACT_NAME = 'coin-flip.woothugg.near';
 
 function getConfig(env) {
   switch (env) {
@@ -17414,7 +17414,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var nearConfig = (0, _config.default)("development" || 'development'); // Initialize contract & set global variables
+var nearConfig = (0, _config.default)('mainnet'); // Initialize contract & set global variables
 
 function initContract() {
   return _initContract.apply(this, arguments);
@@ -17500,7 +17500,7 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var _getConfig = (0, _config.default)("development" || 'development'),
+var _getConfig = (0, _config.default)('mainnet'),
     networkId = _getConfig.networkId;
 
 var utils = nearAPI.utils,
@@ -17588,8 +17588,8 @@ function _signedInFlow() {
             contractLink.href = contractLink.href + window.contract.contractId;
             contractLink.innerText = '@' + window.contract.contractId; // update with selected networkId
 
-            accountLink.href = accountLink.href.replace('testnet', networkId);
-            contractLink.href = contractLink.href.replace('testnet', networkId);
+            accountLink.href = accountLink.href.replace('mainnet', networkId);
+            contractLink.href = contractLink.href.replace('mainnet', networkId);
             _context2.next = 12;
             return window.walletConnection._connectedAccount.getAccountBalance();
 
@@ -17614,7 +17614,7 @@ function _signedInFlow() {
             _context2.t1 = _context2.sent.available;
             balance = _context2.t1 / 1000000000000000000000000;
             document.querySelector('#contract-balance').innerText += "Contract Balance : " + balance.toFixed(2);
-            provider = new providers.JsonRpcProvider("https://archival-rpc.testnet.near.org");
+            provider = new providers.JsonRpcProvider("https://archival-rpc.mainnet.near.org");
             urlSearchParams = new URLSearchParams(window.location.search);
             params = urlSearchParams.get('transactionHashes');
             console.log(params);
@@ -17670,7 +17670,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42527" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33127" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
