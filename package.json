@@ -1,0 +1,23 @@
+{
+  "name": "dist",
+  "version": "1.0.0",
+  "description": "http-server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aelqaraoui/double-or-nothing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aelqaraoui/double-or-nothing/issues"
+  },
+  "homepage": "https://github.com/aelqaraoui/double-or-nothing#readme",
+  "dependencies": {
+    "http-server": "^14.1.0"
+  }
+}
