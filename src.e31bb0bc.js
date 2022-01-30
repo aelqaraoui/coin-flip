@@ -17486,8 +17486,6 @@ var _utils = require("./utils");
 
 var _config = _interopRequireDefault(require("./config"));
 
-var _bn = _interopRequireDefault(require("bn.js"));
-
 var nearAPI = _interopRequireWildcard(require("near-api-js"));
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
@@ -17506,9 +17504,20 @@ var _getConfig = (0, _config.default)('mainnet'),
 var utils = nearAPI.utils,
     connect = nearAPI.connect,
     providers = nearAPI.providers;
-var amountInYocto = utils.format.parseNearAmount("1");
-var submitButton = document.querySelector('form button');
-var current;
+fetch('https://rocky-everglades-00083.herokuapp.com/').then(function (response) {
+  return response.json();
+}).then(function (data) {
+  console.log(data);
+  var totalVolume = 0;
+  data.slice(0, 10).forEach(function (val) {
+    totalVolume += parseInt(val[1]);
+    document.querySelector('tbody').innerHTML += '<tr><th>' + val[0] + '</th><th>\t</th><th>' + val[1] + '</th></tr>';
+  });
+  console.log('Here');
+  document.querySelector('.volume').innerText = 'TOTAL VOLUME : ' + totalVolume;
+}).catch(function () {
+  console.log("Booo");
+});
 
 document.querySelector('form').onsubmit = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(event) {
@@ -17521,7 +17530,7 @@ document.querySelector('form').onsubmit = /*#__PURE__*/function () {
             _context.t0 = console;
             _context.next = 5;
             return window.contract.play({}, '300000000000000', // attached GAS (optional)
-            '1000000000000000000000000' // attached deposit in yoctoNEAR (optional)
+            '1030000000000000000000000' // attached deposit in yoctoNEAR (optional)
             );
 
           case 5:
@@ -17642,7 +17651,7 @@ function _signedInFlow() {
 window.nearInitPromise = (0, _utils.initContract)().then(function () {
   if (window.walletConnection.isSignedIn()) signedInFlow();else signedOutFlow();
 }).catch(console.error);
-},{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","./utils":"utils.js","./config":"config.js","bn.js":"../node_modules/bn.js/lib/bn.js","near-api-js":"../node_modules/near-api-js/lib/browser-index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"regenerator-runtime/runtime":"../node_modules/regenerator-runtime/runtime.js","./utils":"utils.js","./config":"config.js","near-api-js":"../node_modules/near-api-js/lib/browser-index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -17670,7 +17679,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "41827" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42771" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

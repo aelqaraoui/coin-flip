@@ -1,0 +1,58 @@
+Arguments: 
+  /usr/bin/node /usr/local/bin/yarn start
+
+PATH: 
+  /home/amine/.local/share/solana/install/active_release/bin:/home/amine/.local/bin:/home/amine/bin:/home/amine/miniconda3/bin:/home/amine/miniconda3/condabin:/home/amine/.local/share/solana/install/active_release/bin:/home/amine/.cargo/bin:/home/amine/.local/bin:/home/amine/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.22.11
+
+Node version: 
+  16.7.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Invariant Violation: Script must exist
+      at invariant (/usr/local/lib/node_modules/yarn/lib/cli.js:2314:15)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:62391:11
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:328:14
+      at new Promise (<anonymous>)
+      at new F (/usr/local/lib/node_modules/yarn/lib/cli.js:5301:28)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:307:12
+      at realRunCommand (/usr/local/lib/node_modules/yarn/lib/cli.js:62476:23)
+      at action.action (/usr/local/lib/node_modules/yarn/lib/cli.js:62537:16)
+
+npm manifest: 
+  {
+    "name": "dist",
+    "version": "1.0.0",
+    "description": "http-server",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "start": ""
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/aelqaraoui/double-or-nothing.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/aelqaraoui/double-or-nothing/issues"
+    },
+    "homepage": "https://github.com/aelqaraoui/double-or-nothing#readme",
+    "dependencies": {
+      "http-server": "^14.1.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
